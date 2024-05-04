@@ -33,6 +33,7 @@ namespace CppCRUDPROJECT {
 	private: System::Windows::Forms::Button^ btnSortASS;
 	private: System::Windows::Forms::Button^ btnSortJOB;
 	private: System::Windows::Forms::Label^ pwData;
+	private: System::Windows::Forms::Panel^ panel2;
 
 	private:
 
@@ -180,14 +181,17 @@ namespace CppCRUDPROJECT {
 			this->btnSortPROJ = (gcnew System::Windows::Forms::Button());
 			this->btnSortEMP = (gcnew System::Windows::Forms::Button());
 			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->panel1->SuspendLayout();
 			this->panel3->SuspendLayout();
 			this->panel4->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->panel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panel1
 			// 
+			this->panel1->BackColor = System::Drawing::SystemColors::Control;
 			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->panel1->Controls->Add(this->pwData);
 			this->panel1->Controls->Add(this->cbPNum);
@@ -401,13 +405,15 @@ namespace CppCRUDPROJECT {
 			// 
 			// btnSearch
 			// 
-			this->btnSearch->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnSearch->AutoSize = true;
+			this->btnSearch->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->btnSearch->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnSearch->Location = System::Drawing::Point(279, 16);
+			this->btnSearch->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSearch.Image")));
+			this->btnSearch->Location = System::Drawing::Point(297, 15);
 			this->btnSearch->Name = L"btnSearch";
-			this->btnSearch->Size = System::Drawing::Size(98, 35);
+			this->btnSearch->Size = System::Drawing::Size(37, 37);
 			this->btnSearch->TabIndex = 1;
-			this->btnSearch->Text = L"Search";
 			this->btnSearch->UseVisualStyleBackColor = true;
 			this->btnSearch->Click += gcnew System::EventHandler(this, &MyForm::btnSearch_Click);
 			// 
@@ -415,7 +421,7 @@ namespace CppCRUDPROJECT {
 			// 
 			this->txtSearch->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtSearch->Location = System::Drawing::Point(12, 16);
+			this->txtSearch->Location = System::Drawing::Point(30, 15);
 			this->txtSearch->Name = L"txtSearch";
 			this->txtSearch->Size = System::Drawing::Size(261, 35);
 			this->txtSearch->TabIndex = 9;
@@ -573,16 +579,25 @@ namespace CppCRUDPROJECT {
 			this->btnSortEMP->UseVisualStyleBackColor = true;
 			this->btnSortEMP->Click += gcnew System::EventHandler(this, &MyForm::btnSortEMP_Click);
 			// 
+			// panel2
+			// 
+			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->panel2->Controls->Add(this->txtSearch);
+			this->panel2->Controls->Add(this->btnSearch);
+			this->panel2->Location = System::Drawing::Point(12, 12);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(365, 275);
+			this->panel2->TabIndex = 10;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1411, 749);
+			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel4);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->txtSearch);
-			this->Controls->Add(this->btnSearch);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -594,8 +609,9 @@ namespace CppCRUDPROJECT {
 			this->panel3->ResumeLayout(false);
 			this->panel4->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
