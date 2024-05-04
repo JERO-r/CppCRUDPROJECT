@@ -34,6 +34,12 @@ namespace CppCRUDPROJECT {
 	private: System::Windows::Forms::Button^ btnSortJOB;
 	private: System::Windows::Forms::Label^ pwData;
 	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Button^ btnRefresh2;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
+
 
 	private:
 
@@ -72,7 +78,7 @@ namespace CppCRUDPROJECT {
 		}
 	private: System::Windows::Forms::Panel^ panel1;
 
-	private: System::Windows::Forms::Panel^ panel3;
+
 	private: System::Windows::Forms::Panel^ panel4;
 	private: System::Windows::Forms::Button^ btnAddNew;
 	private: System::Windows::Forms::Button^ btnExit;
@@ -148,11 +154,17 @@ namespace CppCRUDPROJECT {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->btnExit = (gcnew System::Windows::Forms::Button());
+			this->btnRefresh = (gcnew System::Windows::Forms::Button());
+			this->btnDelete = (gcnew System::Windows::Forms::Button());
+			this->btnReset = (gcnew System::Windows::Forms::Button());
 			this->pwData = (gcnew System::Windows::Forms::Label());
 			this->cbPNum = (gcnew System::Windows::Forms::ComboBox());
+			this->btnUpdate = (gcnew System::Windows::Forms::Button());
 			this->cbJCode = (gcnew System::Windows::Forms::ComboBox());
 			this->txtBill = (gcnew System::Windows::Forms::TextBox());
 			this->txtANum = (gcnew System::Windows::Forms::TextBox());
+			this->btnAddNew = (gcnew System::Windows::Forms::Button());
 			this->dtAssignDate = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
@@ -167,14 +179,8 @@ namespace CppCRUDPROJECT {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->btnSearch = (gcnew System::Windows::Forms::Button());
 			this->txtSearch = (gcnew System::Windows::Forms::TextBox());
-			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->btnRefresh = (gcnew System::Windows::Forms::Button());
-			this->btnExit = (gcnew System::Windows::Forms::Button());
-			this->btnReset = (gcnew System::Windows::Forms::Button());
-			this->btnDelete = (gcnew System::Windows::Forms::Button());
-			this->btnUpdate = (gcnew System::Windows::Forms::Button());
-			this->btnAddNew = (gcnew System::Windows::Forms::Button());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->btnRefresh2 = (gcnew System::Windows::Forms::Button());
 			this->btnSortJOB = (gcnew System::Windows::Forms::Button());
 			this->btnSortASS = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
@@ -182,22 +188,32 @@ namespace CppCRUDPROJECT {
 			this->btnSortEMP = (gcnew System::Windows::Forms::Button());
 			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1->SuspendLayout();
-			this->panel3->SuspendLayout();
 			this->panel4->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->panel2->SuspendLayout();
+			this->panel3->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel1
 			// 
-			this->panel1->BackColor = System::Drawing::SystemColors::Control;
-			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->panel1->BackColor = System::Drawing::Color::AntiqueWhite;
+			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel1->Controls->Add(this->btnExit);
+			this->panel1->Controls->Add(this->btnRefresh);
+			this->panel1->Controls->Add(this->btnDelete);
+			this->panel1->Controls->Add(this->btnReset);
 			this->panel1->Controls->Add(this->pwData);
 			this->panel1->Controls->Add(this->cbPNum);
+			this->panel1->Controls->Add(this->btnUpdate);
 			this->panel1->Controls->Add(this->cbJCode);
 			this->panel1->Controls->Add(this->txtBill);
 			this->panel1->Controls->Add(this->txtANum);
+			this->panel1->Controls->Add(this->btnAddNew);
 			this->panel1->Controls->Add(this->dtAssignDate);
 			this->panel1->Controls->Add(this->label11);
 			this->panel1->Controls->Add(this->label10);
@@ -212,8 +228,74 @@ namespace CppCRUDPROJECT {
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Location = System::Drawing::Point(383, 12);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(975, 275);
+			this->panel1->Size = System::Drawing::Size(975, 261);
 			this->panel1->TabIndex = 0;
+			// 
+			// btnExit
+			// 
+			this->btnExit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->btnExit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnExit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnExit->ForeColor = System::Drawing::Color::Red;
+			this->btnExit->Location = System::Drawing::Point(805, 206);
+			this->btnExit->Name = L"btnExit";
+			this->btnExit->Size = System::Drawing::Size(152, 41);
+			this->btnExit->TabIndex = 15;
+			this->btnExit->Text = L"Exit";
+			this->btnExit->UseVisualStyleBackColor = false;
+			this->btnExit->Click += gcnew System::EventHandler(this, &MyForm::btnExit_Click);
+			// 
+			// btnRefresh
+			// 
+			this->btnRefresh->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->btnRefresh->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnRefresh->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnRefresh->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->btnRefresh->Location = System::Drawing::Point(173, 206);
+			this->btnRefresh->Name = L"btnRefresh";
+			this->btnRefresh->Size = System::Drawing::Size(152, 41);
+			this->btnRefresh->TabIndex = 11;
+			this->btnRefresh->Text = L"Refresh";
+			this->btnRefresh->UseVisualStyleBackColor = false;
+			this->btnRefresh->Click += gcnew System::EventHandler(this, &MyForm::btnRefresh_Click);
+			// 
+			// btnDelete
+			// 
+			this->btnDelete->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->btnDelete->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnDelete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnDelete->ForeColor = System::Drawing::Color::Red;
+			this->btnDelete->Location = System::Drawing::Point(647, 206);
+			this->btnDelete->Name = L"btnDelete";
+			this->btnDelete->Size = System::Drawing::Size(152, 41);
+			this->btnDelete->TabIndex = 14;
+			this->btnDelete->Text = L"Delete";
+			this->btnDelete->UseVisualStyleBackColor = false;
+			this->btnDelete->Click += gcnew System::EventHandler(this, &MyForm::btnDelete_Click);
+			// 
+			// btnReset
+			// 
+			this->btnReset->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->btnReset->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnReset->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnReset->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->btnReset->Location = System::Drawing::Point(489, 206);
+			this->btnReset->Name = L"btnReset";
+			this->btnReset->Size = System::Drawing::Size(152, 41);
+			this->btnReset->TabIndex = 13;
+			this->btnReset->Text = L"Reset";
+			this->btnReset->UseVisualStyleBackColor = false;
+			this->btnReset->Click += gcnew System::EventHandler(this, &MyForm::btnReset_Click);
 			// 
 			// pwData
 			// 
@@ -238,6 +320,23 @@ namespace CppCRUDPROJECT {
 			this->cbPNum->Size = System::Drawing::Size(258, 37);
 			this->cbPNum->TabIndex = 1;
 			// 
+			// btnUpdate
+			// 
+			this->btnUpdate->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->btnUpdate->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnUpdate->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnUpdate->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->btnUpdate->Location = System::Drawing::Point(331, 206);
+			this->btnUpdate->Name = L"btnUpdate";
+			this->btnUpdate->Size = System::Drawing::Size(152, 41);
+			this->btnUpdate->TabIndex = 12;
+			this->btnUpdate->Text = L"Update";
+			this->btnUpdate->UseVisualStyleBackColor = false;
+			this->btnUpdate->Click += gcnew System::EventHandler(this, &MyForm::btnUpdate_Click);
+			// 
 			// cbJCode
 			// 
 			this->cbJCode->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -251,21 +350,41 @@ namespace CppCRUDPROJECT {
 			// 
 			// txtBill
 			// 
+			this->txtBill->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtBill->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtBill->Location = System::Drawing::Point(697, 198);
+			this->txtBill->Location = System::Drawing::Point(697, 159);
 			this->txtBill->Name = L"txtBill";
 			this->txtBill->Size = System::Drawing::Size(258, 35);
 			this->txtBill->TabIndex = 8;
 			// 
 			// txtANum
 			// 
+			this->txtANum->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtANum->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtANum->Location = System::Drawing::Point(697, 108);
+			this->txtANum->Location = System::Drawing::Point(697, 69);
 			this->txtANum->Name = L"txtANum";
 			this->txtANum->Size = System::Drawing::Size(258, 35);
 			this->txtANum->TabIndex = 6;
+			// 
+			// btnAddNew
+			// 
+			this->btnAddNew->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->btnAddNew->Cursor = System::Windows::Forms::Cursors::IBeam;
+			this->btnAddNew->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnAddNew->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnAddNew->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->btnAddNew->Location = System::Drawing::Point(15, 206);
+			this->btnAddNew->Name = L"btnAddNew";
+			this->btnAddNew->Size = System::Drawing::Size(152, 41);
+			this->btnAddNew->TabIndex = 10;
+			this->btnAddNew->Text = L"Add New";
+			this->btnAddNew->UseVisualStyleBackColor = false;
+			this->btnAddNew->Click += gcnew System::EventHandler(this, &MyForm::btnAddNew_Click);
 			// 
 			// dtAssignDate
 			// 
@@ -273,8 +392,9 @@ namespace CppCRUDPROJECT {
 			this->dtAssignDate->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->dtAssignDate->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dtAssignDate->Location = System::Drawing::Point(697, 154);
+			this->dtAssignDate->Location = System::Drawing::Point(697, 115);
 			this->dtAssignDate->Name = L"dtAssignDate";
+			this->dtAssignDate->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->dtAssignDate->Size = System::Drawing::Size(258, 35);
 			this->dtAssignDate->TabIndex = 7;
 			this->dtAssignDate->Value = System::DateTime(2024, 5, 23, 0, 0, 0, 0);
@@ -285,7 +405,7 @@ namespace CppCRUDPROJECT {
 			this->label11->AutoSize = true;
 			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label11->Location = System::Drawing::Point(491, 108);
+			this->label11->Location = System::Drawing::Point(491, 69);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(182, 29);
 			this->label11->TabIndex = 21;
@@ -297,7 +417,7 @@ namespace CppCRUDPROJECT {
 			this->label10->AutoSize = true;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label10->Location = System::Drawing::Point(491, 157);
+			this->label10->Location = System::Drawing::Point(491, 118);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(200, 29);
 			this->label10->TabIndex = 20;
@@ -308,7 +428,7 @@ namespace CppCRUDPROJECT {
 			this->label9->AutoSize = true;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(491, 198);
+			this->label9->Location = System::Drawing::Point(491, 159);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(92, 29);
 			this->label9->TabIndex = 19;
@@ -316,9 +436,10 @@ namespace CppCRUDPROJECT {
 			// 
 			// txtEFName
 			// 
+			this->txtEFName->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtEFName->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtEFName->Location = System::Drawing::Point(222, 154);
+			this->txtEFName->Location = System::Drawing::Point(222, 115);
 			this->txtEFName->Name = L"txtEFName";
 			this->txtEFName->Size = System::Drawing::Size(258, 35);
 			this->txtEFName->TabIndex = 3;
@@ -329,7 +450,7 @@ namespace CppCRUDPROJECT {
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(20, 157);
+			this->label7->Location = System::Drawing::Point(20, 118);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(195, 29);
 			this->label7->TabIndex = 12;
@@ -350,9 +471,10 @@ namespace CppCRUDPROJECT {
 			// 
 			// txtELName
 			// 
+			this->txtELName->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtELName->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtELName->Location = System::Drawing::Point(222, 195);
+			this->txtELName->Location = System::Drawing::Point(222, 156);
 			this->txtELName->Name = L"txtELName";
 			this->txtELName->Size = System::Drawing::Size(258, 35);
 			this->txtELName->TabIndex = 4;
@@ -363,7 +485,7 @@ namespace CppCRUDPROJECT {
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(20, 198);
+			this->label6->Location = System::Drawing::Point(20, 159);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(192, 29);
 			this->label6->TabIndex = 6;
@@ -372,9 +494,10 @@ namespace CppCRUDPROJECT {
 			// 
 			// txtENum
 			// 
+			this->txtENum->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtENum->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtENum->Location = System::Drawing::Point(222, 105);
+			this->txtENum->Location = System::Drawing::Point(222, 66);
 			this->txtENum->Name = L"txtENum";
 			this->txtENum->Size = System::Drawing::Size(258, 35);
 			this->txtENum->TabIndex = 2;
@@ -385,7 +508,7 @@ namespace CppCRUDPROJECT {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(20, 108);
+			this->label3->Location = System::Drawing::Point(20, 69);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(109, 29);
 			this->label3->TabIndex = 4;
@@ -410,7 +533,7 @@ namespace CppCRUDPROJECT {
 			this->btnSearch->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnSearch->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSearch.Image")));
-			this->btnSearch->Location = System::Drawing::Point(297, 15);
+			this->btnSearch->Location = System::Drawing::Point(311, 210);
 			this->btnSearch->Name = L"btnSearch";
 			this->btnSearch->Size = System::Drawing::Size(37, 37);
 			this->btnSearch->TabIndex = 1;
@@ -419,184 +542,167 @@ namespace CppCRUDPROJECT {
 			// 
 			// txtSearch
 			// 
+			this->txtSearch->BackColor = System::Drawing::SystemColors::Window;
+			this->txtSearch->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtSearch->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtSearch->Location = System::Drawing::Point(30, 15);
+			this->txtSearch->Location = System::Drawing::Point(18, 212);
 			this->txtSearch->Name = L"txtSearch";
-			this->txtSearch->Size = System::Drawing::Size(261, 35);
+			this->txtSearch->Size = System::Drawing::Size(287, 35);
 			this->txtSearch->TabIndex = 9;
 			this->txtSearch->TextChanged += gcnew System::EventHandler(this, &MyForm::txtSearch_TextChanged);
 			this->txtSearch->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::txtSearch_KeyPress);
 			// 
-			// panel3
-			// 
-			this->panel3->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->panel3->Controls->Add(this->btnRefresh);
-			this->panel3->Controls->Add(this->btnExit);
-			this->panel3->Controls->Add(this->btnReset);
-			this->panel3->Controls->Add(this->btnDelete);
-			this->panel3->Controls->Add(this->btnUpdate);
-			this->panel3->Controls->Add(this->btnAddNew);
-			this->panel3->Location = System::Drawing::Point(12, 293);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(1346, 51);
-			this->panel3->TabIndex = 2;
-			this->panel3->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::panel3_Paint);
-			// 
-			// btnRefresh
-			// 
-			this->btnRefresh->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnRefresh->Location = System::Drawing::Point(265, 3);
-			this->btnRefresh->Name = L"btnRefresh";
-			this->btnRefresh->Size = System::Drawing::Size(199, 41);
-			this->btnRefresh->TabIndex = 11;
-			this->btnRefresh->Text = L"Refresh";
-			this->btnRefresh->UseVisualStyleBackColor = true;
-			this->btnRefresh->Click += gcnew System::EventHandler(this, &MyForm::btnRefresh_Click);
-			// 
-			// btnExit
-			// 
-			this->btnExit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnExit->Location = System::Drawing::Point(1088, 3);
-			this->btnExit->Name = L"btnExit";
-			this->btnExit->Size = System::Drawing::Size(200, 41);
-			this->btnExit->TabIndex = 15;
-			this->btnExit->Text = L"Exit";
-			this->btnExit->UseVisualStyleBackColor = true;
-			this->btnExit->Click += gcnew System::EventHandler(this, &MyForm::btnExit_Click);
-			// 
-			// btnReset
-			// 
-			this->btnReset->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnReset->Location = System::Drawing::Point(882, 3);
-			this->btnReset->Name = L"btnReset";
-			this->btnReset->Size = System::Drawing::Size(200, 41);
-			this->btnReset->TabIndex = 14;
-			this->btnReset->Text = L"Reset";
-			this->btnReset->UseVisualStyleBackColor = true;
-			this->btnReset->Click += gcnew System::EventHandler(this, &MyForm::btnReset_Click);
-			// 
-			// btnDelete
-			// 
-			this->btnDelete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnDelete->Location = System::Drawing::Point(676, 3);
-			this->btnDelete->Name = L"btnDelete";
-			this->btnDelete->Size = System::Drawing::Size(200, 41);
-			this->btnDelete->TabIndex = 13;
-			this->btnDelete->Text = L"Delete";
-			this->btnDelete->UseVisualStyleBackColor = true;
-			this->btnDelete->Click += gcnew System::EventHandler(this, &MyForm::btnDelete_Click);
-			// 
-			// btnUpdate
-			// 
-			this->btnUpdate->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnUpdate->Location = System::Drawing::Point(470, 3);
-			this->btnUpdate->Name = L"btnUpdate";
-			this->btnUpdate->Size = System::Drawing::Size(200, 41);
-			this->btnUpdate->TabIndex = 12;
-			this->btnUpdate->Text = L"Update";
-			this->btnUpdate->UseVisualStyleBackColor = true;
-			this->btnUpdate->Click += gcnew System::EventHandler(this, &MyForm::btnUpdate_Click);
-			// 
-			// btnAddNew
-			// 
-			this->btnAddNew->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnAddNew->Location = System::Drawing::Point(59, 3);
-			this->btnAddNew->Name = L"btnAddNew";
-			this->btnAddNew->Size = System::Drawing::Size(200, 41);
-			this->btnAddNew->TabIndex = 10;
-			this->btnAddNew->Text = L"Add New";
-			this->btnAddNew->UseVisualStyleBackColor = true;
-			this->btnAddNew->Click += gcnew System::EventHandler(this, &MyForm::btnAddNew_Click);
-			// 
 			// panel4
 			// 
-			this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->panel4->Controls->Add(this->btnSortJOB);
-			this->panel4->Controls->Add(this->btnSortASS);
+			this->panel4->BackColor = System::Drawing::Color::AntiqueWhite;
+			this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel4->Controls->Add(this->panel3);
 			this->panel4->Controls->Add(this->dataGridView1);
-			this->panel4->Controls->Add(this->btnSortPROJ);
-			this->panel4->Controls->Add(this->btnSortEMP);
-			this->panel4->Location = System::Drawing::Point(12, 350);
+			this->panel4->Location = System::Drawing::Point(12, 279);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(1346, 387);
+			this->panel4->Size = System::Drawing::Size(1346, 458);
 			this->panel4->TabIndex = 3;
+			// 
+			// btnRefresh2
+			// 
+			this->btnRefresh2->BackColor = System::Drawing::Color::AntiqueWhite;
+			this->btnRefresh2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnRefresh2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnRefresh2->Location = System::Drawing::Point(12, 374);
+			this->btnRefresh2->Name = L"btnRefresh2";
+			this->btnRefresh2->Size = System::Drawing::Size(127, 60);
+			this->btnRefresh2->TabIndex = 15;
+			this->btnRefresh2->Text = L"Refresh";
+			this->btnRefresh2->UseVisualStyleBackColor = false;
+			this->btnRefresh2->Click += gcnew System::EventHandler(this, &MyForm::btnRefresh2_Click);
 			// 
 			// btnSortJOB
 			// 
-			this->btnSortJOB->Location = System::Drawing::Point(59, 280);
+			this->btnSortJOB->BackColor = System::Drawing::Color::AntiqueWhite;
+			this->btnSortJOB->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnSortJOB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnSortJOB->Location = System::Drawing::Point(12, 197);
 			this->btnSortJOB->Name = L"btnSortJOB";
-			this->btnSortJOB->Size = System::Drawing::Size(127, 50);
+			this->btnSortJOB->Size = System::Drawing::Size(127, 60);
 			this->btnSortJOB->TabIndex = 13;
 			this->btnSortJOB->Text = L"Job";
-			this->btnSortJOB->UseVisualStyleBackColor = true;
+			this->btnSortJOB->UseVisualStyleBackColor = false;
 			this->btnSortJOB->Click += gcnew System::EventHandler(this, &MyForm::btnSortJOB_Click);
 			// 
 			// btnSortASS
 			// 
-			this->btnSortASS->Location = System::Drawing::Point(59, 200);
+			this->btnSortASS->BackColor = System::Drawing::Color::AntiqueWhite;
+			this->btnSortASS->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnSortASS->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnSortASS->Location = System::Drawing::Point(12, 274);
 			this->btnSortASS->Name = L"btnSortASS";
-			this->btnSortASS->Size = System::Drawing::Size(127, 50);
+			this->btnSortASS->Size = System::Drawing::Size(127, 60);
 			this->btnSortASS->TabIndex = 14;
 			this->btnSortASS->Text = L"Assignment";
-			this->btnSortASS->UseVisualStyleBackColor = true;
+			this->btnSortASS->UseVisualStyleBackColor = false;
 			this->btnSortASS->Click += gcnew System::EventHandler(this, &MyForm::btnSortASS_Click);
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGridView1->BackgroundColor = System::Drawing::Color::WhiteSmoke;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(265, 12);
+			this->dataGridView1->Location = System::Drawing::Point(162, 3);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(1046, 342);
+			this->dataGridView1->Size = System::Drawing::Size(1179, 450);
 			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellClick_1);
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
 			// 
 			// btnSortPROJ
 			// 
-			this->btnSortPROJ->Location = System::Drawing::Point(59, 45);
+			this->btnSortPROJ->BackColor = System::Drawing::Color::AntiqueWhite;
+			this->btnSortPROJ->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnSortPROJ->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnSortPROJ->Location = System::Drawing::Point(12, 41);
 			this->btnSortPROJ->Name = L"btnSortPROJ";
-			this->btnSortPROJ->Size = System::Drawing::Size(127, 50);
+			this->btnSortPROJ->Size = System::Drawing::Size(127, 60);
 			this->btnSortPROJ->TabIndex = 11;
 			this->btnSortPROJ->Text = L"Project";
-			this->btnSortPROJ->UseVisualStyleBackColor = true;
+			this->btnSortPROJ->UseVisualStyleBackColor = false;
 			this->btnSortPROJ->Click += gcnew System::EventHandler(this, &MyForm::btnSortPROJ_Click);
 			// 
 			// btnSortEMP
 			// 
-			this->btnSortEMP->Location = System::Drawing::Point(59, 122);
+			this->btnSortEMP->BackColor = System::Drawing::Color::AntiqueWhite;
+			this->btnSortEMP->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnSortEMP->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnSortEMP->Location = System::Drawing::Point(12, 119);
 			this->btnSortEMP->Name = L"btnSortEMP";
-			this->btnSortEMP->Size = System::Drawing::Size(127, 50);
+			this->btnSortEMP->Size = System::Drawing::Size(127, 60);
 			this->btnSortEMP->TabIndex = 12;
 			this->btnSortEMP->Text = L"Employee";
-			this->btnSortEMP->UseVisualStyleBackColor = true;
+			this->btnSortEMP->UseVisualStyleBackColor = false;
 			this->btnSortEMP->Click += gcnew System::EventHandler(this, &MyForm::btnSortEMP_Click);
 			// 
 			// panel2
 			// 
-			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->panel2->Controls->Add(this->txtSearch);
+			this->panel2->BackColor = System::Drawing::Color::AntiqueWhite;
+			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel2->Controls->Add(this->pictureBox1);
 			this->panel2->Controls->Add(this->btnSearch);
+			this->panel2->Controls->Add(this->txtSearch);
 			this->panel2->Location = System::Drawing::Point(12, 12);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(365, 275);
+			this->panel2->Size = System::Drawing::Size(365, 260);
 			this->panel2->TabIndex = 10;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(8, 9);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(43, 20);
+			this->label2->TabIndex = 16;
+			this->label2->Text = L"Sort:";
+			// 
+			// panel3
+			// 
+			this->panel3->BackColor = System::Drawing::Color::Wheat;
+			this->panel3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel3->Controls->Add(this->btnSortASS);
+			this->panel3->Controls->Add(this->label2);
+			this->panel3->Controls->Add(this->btnSortEMP);
+			this->panel3->Controls->Add(this->btnRefresh2);
+			this->panel3->Controls->Add(this->btnSortPROJ);
+			this->panel3->Controls->Add(this->btnSortJOB);
+			this->panel3->Location = System::Drawing::Point(5, 3);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(151, 450);
+			this->panel3->TabIndex = 17;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->pictureBox1->Location = System::Drawing::Point(5, 3);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(355, 203);
+			this->pictureBox1->TabIndex = 10;
+			this->pictureBox1->TabStop = false;
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::NavajoWhite;
 			this->ClientSize = System::Drawing::Size(1411, 749);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel4);
-			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm";
@@ -606,11 +712,13 @@ namespace CppCRUDPROJECT {
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
-			this->panel3->ResumeLayout(false);
 			this->panel4->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
+			this->panel3->ResumeLayout(false);
+			this->panel3->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -992,6 +1100,9 @@ private: System::Void MyForm_FormClosed(System::Object^ sender, System::Windows:
 	{
 		MessageBox::Show(ex->Message, "Data Entry Form", MessageBoxButtons::YesNo, MessageBoxIcon::Information);
 	}
+}
+private: System::Void btnRefresh2_Click(System::Object^ sender, System::EventArgs^ e) {
+	RefreshDB();
 }
 };
 }

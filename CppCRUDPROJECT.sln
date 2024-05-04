@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppCRUDPROJECT", "CppCRUD_PROJECT\CppCRUD_PROJECT.vcxproj", "{DE8A3803-F388-4151-999B-DFA7924551CD}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CRUDProjectSetup", "CRUDProjectSetup\CRUDProjectSetup.vdproj", "{618C5D2C-F128-40C5-878C-68EE17507DB4}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CRUDProject Installer", "CRUDProject Installer\CRUDProject Installer.vdproj", "{51353988-935A-4EC3-A218-80B5EEB2A27C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +22,10 @@ Global
 		{DE8A3803-F388-4151-999B-DFA7924551CD}.Release|x64.Build.0 = Release|x64
 		{DE8A3803-F388-4151-999B-DFA7924551CD}.Release|x86.ActiveCfg = Release|Win32
 		{DE8A3803-F388-4151-999B-DFA7924551CD}.Release|x86.Build.0 = Release|Win32
-		{618C5D2C-F128-40C5-878C-68EE17507DB4}.Debug|x64.ActiveCfg = Debug
-		{618C5D2C-F128-40C5-878C-68EE17507DB4}.Debug|x86.ActiveCfg = Debug
-		{618C5D2C-F128-40C5-878C-68EE17507DB4}.Release|x64.ActiveCfg = Release
-		{618C5D2C-F128-40C5-878C-68EE17507DB4}.Release|x86.ActiveCfg = Release
+		{51353988-935A-4EC3-A218-80B5EEB2A27C}.Debug|x64.ActiveCfg = Debug
+		{51353988-935A-4EC3-A218-80B5EEB2A27C}.Debug|x86.ActiveCfg = Debug
+		{51353988-935A-4EC3-A218-80B5EEB2A27C}.Release|x64.ActiveCfg = Release
+		{51353988-935A-4EC3-A218-80B5EEB2A27C}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
